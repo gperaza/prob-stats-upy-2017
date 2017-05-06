@@ -1,0 +1,246 @@
+#+Title: Describing Data Sets
+#+Author: Gonzalo G. Peraza Mues
+#+Email: ggperaza@gmail.com
+
+#+OPTIONS: reveal_slide_number:c/t reveal_center:t toc:nil author:t timestamp:nil
+#+OPTIONS: num:nil reveal_progress:nil reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_rolling_links:nil reveal_keyboard:t reveal_overview:t
+#+OPTIONS: reveal_width:1080 reveal_height:920
+# #+REVEAL_MARGIN: 0.1
+# #+REVEAL_MIN_SCALE: 0.5
+# #+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: slide
+#+REVEAL_THEME: white
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ../css/slides.css
+#+REVEAL_DEFAULT_FRAG_STYLE: appear
+
+* Case 1: a couple of apples
+#+ATTR_HTML: :width auto :height 200
+[[file:img/apples1.png]]
+** 3 apples, 4 variables
+[[file:img/freq-table-1.png]]
+#+ATTR_REVEAL: :frag (t)
+/No big deal./
+* Case 2: more apples
+#+ATTR_HTML: :width auto :height 200
+[[file:img/apples2.png]]
+** 7 apples, 4 variables
+[[file:img/freq-table-2.png]]
+#+ATTR_REVEAL: :frag (t)
+/Still OK./
+* Case 3: lots of apples
+#+ATTR_HTML: :width auto :height 200
+[[file:img/apples3.png]]
+** 25 apples, 4 variables
+#+ATTR_HTML: :width auto :height 600
+[[file:img/freq-table-3.png]]
+#+ATTR_REVEAL: :frag (t)
+/Oh oh./
+** Too much data.
+* Main idea
+Make a large or complicated dataset more compact and easier to understand by
+organizing it in a table, chart, or few key values.
+
+#  LocalWords:  dataset
+* Frequency tables
+:PROPERTIES:
+:reveal_background: #f49842
+:END:
+* 
+Number of days of sick leave taken by each of 50 workers in a company over 6
+weeks
+
+2, 2, 0, 0, 5, 8, 3, 4, 1, 0, 0, 7, 1, 7, 1, 5, 4, 0, 4, 0, 1, 8, 9, 7, 0, 1, 7,
+2, 5, 5, 4, 3, 3, 0, 0, 2, 5, 1, 3, 0, 1, 0, 2, 4, 5, 0, 5, 7, 5, 1
+
+| Values | Frequency | Value | Frequency |
+|--------+-----------+-------+-----------|
+|      0 |           |     5 |           |
+|      1 |           |     6 |           |
+|      2 |           |     7 |           |
+|      3 |           |     8 |           |
+|      4 |           |     9 |           |
+
+** 
+| Values | Frequency | Value | Frequency |
+|--------+-----------+-------+-----------|
+|      0 |        12 |     5 |         8 |
+|      1 |         8 |     6 |         0 |
+|      2 |         5 |     7 |         5 |
+|      3 |         4 |     8 |         2 |
+|      4 |         5 |     9 |         1 |
+
+How many workers had at least 1 day of sick leave?
+
+How many workers had between 3 and 5 days of sick leave?
+
+How many workers had more than 5 days of sick leave?
+* Line Graphs
+#+ATTR_HTML: :width auto :height 600
+[[file:img/fig_2_1.png]]
+** Bar graphs
+#+ATTR_HTML: :width auto :height 600
+[[file:img/fig_2_2.png]]
+** Frequency polygon
+#+ATTR_HTML: :width auto :height 600
+[[file:img/fig_2_3.png]]
+* Symmetry of a data set
+Symmetric about $x_{0}$ if, for all $c$, frequencies:
+
+\[f(x_{0} - c) = f(x_{0} + c)\]
+
+| Values | Frequency | Value | Frequency |
+|--------+-----------+-------+-----------|
+|      0 |         1 |     4 |         2 |
+|      2 |         2 |     6 |         1 |
+|      3 |         3 |     0 |         0 |
+
+** 
+#+ATTR_HTML: :width auto :height 400
+[[file:img/fig_2_4.png]]
+
+* Relative Frequency Graphs
+ - Relative frequency $= \frac{f}{n}$
+ - How to construct a relative frequency table
+   - Arrange the dataset in increasing order of values
+   - Determine the distinct values and how often they occur
+   - List these distinct values along side their frequency $f$ and their
+     relative frequency $f/n$
+** 
+| Value | Frequency | Relative frequency |
+|     0 |        12 |                    |
+|     1 |         8 |                    |
+|     2 |         5 |                    |
+|     3 |         4 |                    |
+|     4 |         5 |                    |
+|     5 |         8 |                    |
+|     6 |         0 |                    |
+|     7 |         5 |                    |
+|     8 |         2 |                    |
+|     9 |         1 |                    |
+
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/fig_2_5.png]]
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/example_2_2.png]]
+* Pie Charts
+ - Plot relative frequencies when the data are not numeric
+ - Area of sector = relative frequency * area of circle
+ - Angle of sector = 360º * relative frequency
+| Type of weapon  | Percentage of murders |
+| Handgun         |                    52 |
+| Knife           |                    18 |
+| Shotgun         |                     7 |
+| Rifle           |                     4 |
+| Personal weapon |                     6 |
+| Other           |                    13 |
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/fig_2_6.png]]
+
+* Grouped Data
+ - How to graph a large number of distinct values?
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/table_2-3-b.png]]
+** We /group/ the data.
+** Class intervals
+Trade off between:
+#+ATTR_REVEAL: :frag (t)
+ - Choosing too few classes at a cost of loosing information
+ - Choose too many classes -> small frequencies -> no longer match the
+   population
+#+ATTR_REVEAL: :frag (t)
+Trial and error.
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/table_2-4-b.png]]
+** Class boundaries
+ - Equal length
+\[\Delta x = x_{i+1}-x_{i}\]
+ - Left end inclusion convention 
+\[[x_{i},x_{i+1})\]
+* Histograms
+#+ATTR_HTML: :width auto :height 600
+[[file:img/fig_2_5-b.png]]
+** How do we make the previous histogram a relative frequency histogram?
+** Graphical information from a histogram
+ - How symmetric the data are.
+ - How spread the data are.
+ - Identifying intervals with high levels of concentration.
+ - Identifying gaps.
+ - Whether some data values are far apart from others.
+** 
+#+ATTR_HTML: :width auto :height 400
+[[file:img/hist-sym.png]]
+** 
+#+ATTR_HTML: :width auto :height 400
+[[file:img/hist-spread.png]]
+** 
+#+ATTR_HTML: :width auto :height 400
+[[file:img/hist-gap.png]]
+** Remember: Information is being lost.
+** 
+[[file:img/Tips-histogram1.png]]
+** 
+[[file:img/Tips-histogram2.png]]
+* 
+However, bins need not be of equal width; in that case, the erected rectangle is
+defined to have its area proportional to the frequency of cases in the bin.  The
+vertical axis is then not the frequency but frequency density — the number of
+cases per unit of the variable on the horizontal axis.
+** Time occupied by travel to work
+| Interval | 	Width | 	Quantity | 	Quantity/width |
+|----------+---------------+------------------+------------------------|
+|        0 | 	5     | 	4180     | 	836            |
+|        5 | 	5     | 	13687    | 	2737           |
+|       10 | 	5     | 	18618    | 	3723           |
+|       15 | 	5     | 	19634    | 	3926           |
+|       20 | 	5     | 	17981    | 	3596           |
+|       25 | 	5     | 	7190     | 	1438           |
+|       30 | 	5     | 	16369    | 	3273           |
+|       35 | 	5     | 	3212     | 	642            |
+|       40 | 	5     | 	4122     | 	824            |
+|       45 | 	15    | 	9200     | 	613            |
+|       60 | 	30    | 	6461     | 	215            |
+|       90 | 	60    | 	3435     | 	57             |
+** 
+This histogram shows the number of cases per unit interval as the height of each
+block, so that the area of each block is equal to the number of people in the
+survey who fall into its category. The area under the curve represents the total
+number of cases (124 million).
+
+#+ATTR_HTML: :width auto :height 400
+[[file:img/Travel_time_histogram_total_n_Stata.png]]
+* Example
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/table_2-9.png]]
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/table_2-10.png]]
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/fig_2_10.png]]
+* Cumulative frequency plot (Ogive)
+#+ATTR_HTML: :width auto :height 600
+[[file:img/fig_2_6-b.png]]
+* Stem and leaf plot
+84
+
+[[file:img/stem-leaf-1.png]]
+
+87, 84
+
+
+[[file:img/stem-leaf-2.png]]
+** 
+The following data represent the proportion of public elementary school students
+that are classified as minority in each of 18 cities.
+
+[[file:img/stem-leaf-3.png]]
+
+[[file:img/stem-leaf-4.png]]

@@ -1,0 +1,267 @@
+\documentclass{beamer}
+
+\usetheme[sectionpage=simple, subsectionpage=simple,
+numbering=fraction, progressbar=none]
+{metropolis}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{tikz}
+
+\title{Estimation}
+\date{\today}
+\author{Gonzalo G. Peraza Mues}
+% \institute{Universidad Politécnica de Yucatán}
+
+\titlegraphic{\includegraphics[height=1.5cm]{logo-upy}}
+
+\newcommand{\E}[1]{\operatorname{E}\left[#1\right]}
+\newcommand{\Var}[1]{\operatorname{Var}\left(#1\right)}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\P}[1]{P\left(#1\right)}
+
+
+\begin{document}
+\maketitle
+\begin{frame}
+  A recent poll of 1500 randomly chosen people indicated that 22 percent of the
+  entire population is presently dieting, with a margin of error of $\pm$2 percent.
+
+  \begin{itemize}
+  \item What does ``margin of error'' mean?
+  \item How can the proportion of a population in the millions can be
+    ascertained by sampling only 1500 people?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Estimators}
+  When the distribution of the population is known but one or some of its
+  parameters are missing one can use the results from a sample of the population
+  to estimate these unknown parameters.
+
+  \textbf{Definition: }An \alert{estimator} is a statistic whose value depends on
+  the particular sample drawn. The value of the estimator, called the
+  \alert{estimate}, is used to predict the value of a population parameter.
+\end{frame}
+
+\begin{frame}{Point estimators}
+
+  \begin{itemize}
+  \item The sample mean $\bar{X}$.
+  \item The population proportion $\hat{p}$.
+  \item The population variance $S^2$.
+  \end{itemize}
+
+  \textbf{Definition: }An estimator whose expected value is equal to the
+  parameter it is estimating is said to be an \alert{unbiased} estimator of that
+  parameter.
+
+\end{frame}
+
+\begin{frame}{Point Estimator of the Population Mean.}
+  \begin{itemize}
+  \item The estimator of the population mean $\mu$ is the sample mean $\bar{X}$.
+  \item It is an unbiased estimator; $\E{\bar{X}}=\mu$.
+  \item The standard error is $SEM=\sigma/\sqrt{n}$.
+  \end{itemize}
+
+  The estimate of the population mean will be correct to within $\pm$2 standard
+  errors. To cut the standard error in half, we must increase the sample size by
+  a factor of 4.
+\end{frame}
+
+\begin{frame}{Point Estimator of a Population Proportion}
+  \begin{itemize}
+  \item The estimator of the population proportion $p$ is the sample proportion
+    $\hat{p}$.
+  \item It is an unbiased estimator; $\E{\hat{p}}=p$.
+  \item The standard error is $SD(\hat{p})=\sqrt{\frac{p(1-p)}{n}}$.
+  \end{itemize}
+
+  It can be shown that $p(1-p)\leq\frac{1}{4}$ which in turn means that
+  $SD(\hat{p}) \leq \frac{1}{2\sqrt{n}}$.
+\end{frame}
+
+\begin{frame}{Estimating a Population Variance}
+  \begin{itemize}
+  \item The estimator of the population variance $\sigma^2$ is:
+    \begin{itemize}
+    \item $\frac{\sum_{i=1}^n (X_i-\mu)^2}{n}$if $\mu$ is known.
+    \item $S^2$ if $\mu$ is unknown.
+    \end{itemize}
+  \item $S^2$ is an unbiased estimator; $\E{S^2}=\sigma^2$.
+  \end{itemize}
+
+  The population standard deviation $\sigma$ is estimated by $S$.
+\end{frame}
+
+\begin{frame}{Interval Estimators of the Mean with Known
+    Population Variance}
+  \textbf{Definition: }An \alert{interval estimator} of a population parameter
+  is an interval that is predicted to contain the parameter. The
+  \alert{confidence} we ascribe to the interval is the probability that it will
+  contain the parameter.
+
+  To determine an interval estimator of a population parameter, we use the prob-
+  ability distribution of the point estimator of that parameter.
+\end{frame}
+
+\begin{frame}{Interval Estimators of the Mean with Known
+    Population Variance}
+  Let's obtain the $1-\alpha$ percent confidence interval estimator for $\mu$:
+  \begin{align*}
+    \P{\frac{\sqrt{n}}{\sigma}\abs{\bar{X}-\mu} \leq z_{\alpha/2}} = 1-\alpha
+  \end{align*}
+
+  Reorganizing
+  \begin{align*}
+    \P{\bar{X} - z_{\alpha/2}\frac{\sqrt{n}}{\sigma}
+    \leq \mu \leq \bar{X} + z_{\alpha/2}\frac{\sqrt{n}}{\sigma}} = 1 - \alpha
+  \end{align*}
+
+  If the observed value of $\bar{X}$ is $\bar{x}$, then we call the interval
+  \begin{align*}
+    \bar{x}\pm z_{\alpha/2}\frac{\sigma}{\sqrt{n}}
+  \end{align*}
+  percent confidence interval estimate of $\mu$.
+\end{frame}
+
+\begin{frame}[t,shrink=10]{Interval Estimators of the Mean with Known
+    Population Variance. Example}
+  Suppose that if a signal having intensity $\mu$ originates at location A, then
+  the intensity recorded at location B is normally distributed with mean $\mu$
+  and standard deviation 3. To reduce the error, the same signal is
+  independently recorded 10 times. If the successive recorded values are
+  \begin{center}
+    17, 21, 20, 18, 19, 22, 20, 21, 16, 19
+  \end{center}
+  construct a 90, 95 and 99 percent confidence interval for $\mu$, the actual
+  intensity.
+\end{frame}
+
+\begin{frame}{Interval Estimators of the Mean with Known Population
+    Variance. How Large a Sample is Needed?}
+  The length of the $100(1 - \alpha)$ percent confidence interval estimator of
+  the population mean will be less than or equal to $b$ when the sample size $n$
+  satisfies
+  \begin{align*}
+    n \geq \left( \frac{2z_{\alpha/2}\sigma}{b}  \right)^2
+  \end{align*}
+\end{frame}
+
+\begin{frame}[t,shrink=10]{Interval Estimators of the Mean with Known
+    Population Variance. Example}
+  From past experience it is known that the weights of salmon grown at a
+  commercial hatchery are normal with a mean that varies from season to season
+  but with a standard deviation that remains fixed at 0.3 pounds. If we want to
+  be 90 percent certain that our estimate of the mean weight of a salmon is
+  correct to within $\pm$0.1 pounds, how large a sample is needed? What if we
+  want to be 99 percent certain?
+\end{frame}
+
+\begin{frame}{Interval Estimators of the Mean with Known
+    Population Variance. Lower and Upper Confidence Bounds}
+  A $100(1 - \alpha)$ percent lower confidence bound for the population mean
+  $\mu$ is given by
+  \begin{align*}
+    \bar{X} - z_{\alpha}\frac{\sigma}{\sqrt{n}}
+  \end{align*}
+
+  A $100(1 - \alpha)$ percent upper confidence bound for the population mean
+  $\mu$ is given by
+  \begin{align*}
+    \bar{X} + z_{\alpha}\frac{\sigma}{\sqrt{n}}
+  \end{align*}
+\end{frame}
+\begin{frame}{Interval Estimators of the Mean with Unknown Population Variance}
+  Since $\sigma$ is no longer known, we replace it by its estimator $S$. We
+  based our confidence interval in the t-distributed variable:
+  \begin{align*}
+    T_{n-1} = \sqrt{n}\frac{\bar{X}-\mu}{S}
+  \end{align*}
+
+  A $100(1 - \alpha)$ percent confidence interval estimator for the population
+  mean $\mu$ is given by the interval
+  \begin{align*}
+    \bar{X}\pm t_{n-1, \alpha/2}\frac{S}{\sqrt{n}}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Interval Estimators of the Mean with Unknown Population Variance}
+  A $100(1 - \alpha)$ percent lower confidence bound for the population mean
+  $\mu$ is given by
+  \begin{align*}
+    \bar{X} - t_{n-1,\alpha}\frac{S}{\sqrt{n}}
+  \end{align*}
+
+  A $100(1 - \alpha)$ percent upper confidence bound for the population mean
+  $\mu$ is given by
+  \begin{align*}
+    \bar{X} + t_{n-1,\alpha}\frac{S}{\sqrt{n}}
+  \end{align*}
+\end{frame}
+
+\begin{frame}[t,shrink=10]{Interval Estimators of the Mean with Unknown Population
+    Variance: Example}
+  The Environmental Protection Agency (EPA) is concerned about the amounts of
+  PCB, a toxic chemical, in the milk of nursing mothers. In a sample of 20
+  women, the amounts (in parts per million) of PCB were as follows:
+  \begin{center}
+    16, 0, 0, 2, 3, 6, 8, 2, 5, 0, 12, 10, 5, 7, 2, 3, 8, 17, 9, 1
+  \end{center}
+  Use these data to obtain a (a) 95 percent confidence interval; (b) 99 percent
+  confidence interval of the average amount of PCB in the milk of nursing
+  mothers. (c) 95 percent upper confidence bound (d); 99 percent lower
+  confidence bound
+\end{frame}
+
+
+\begin{frame}{Interval Estimators of a Population Proportion}
+  We can use the normal approximation to the binomial distribution to obtain the
+  approximate $100(1-\alpha)$ percent confidence interval estimator of $p$
+  \begin{align*}
+    \hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+  \end{align*}
+
+  The length of this interval is
+  \begin{align*}
+    2z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+  \end{align*}
+  with the upper bound
+  \begin{align*}
+    \text{Length of interval} \leq \frac{z_{\alpha/2}}{\sqrt{n}}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Interval Estimators of a Population Proportion}
+  A $100(1 - \alpha)$ percent lower confidence bound for the population mean
+  $\mu$ is given by
+  \begin{align*}
+    \hat{p} - z_{\alpha}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+  \end{align*}
+
+  A $100(1 - \alpha)$ percent upper confidence bound for the population mean
+  $\mu$ is given by
+  \begin{align*}
+    \hat{p} + z_{\alpha}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+  \end{align*}
+\end{frame}
+
+\begin{frame}[t]{Interval Estimators of a Population Proportion. Example}
+  Out of a random sample of 100 students at a university, 82 stated that they
+  were nonsmokers. Based on this, construct a 99 percent confidence interval
+  estimate of p, the proportion of all the students at the university who are
+  nonsmokers.
+\end{frame}
+
+\begin{frame}[t]{Interval Estimators of a Population Proportion. Example}
+  How large a sample is needed to ensure that the length of the 90 percent
+  confidence interval estimate of p is less than 0.01?
+\end{frame}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,60 @@
+#+TITLE: Syllabus
+#+SUBTITLE: I reserve the right to make changes to the syllabus
+#+OPTIONS: toc:nil num:nil
+
+* Description
+This is an introductory course on probability and statistics.
+
+*Objective:* The student will solve statistics problems using data processing and
+analysis techniques, including parameter estimation, to support decision-making.
+
+*Quarter:* First
+
+*Hours per week:* 5
+
+*Total hours:* 75
+
+*Prerequisites:* Basic algebra.
+
+* Outline
+The curse will be structured in 3 mayor blocks with corresponding subtopics:
+
+1. Descriptive Statistics
+2. Probability
+3. Inferential Statistics
+      
+* References
+ - Introductory Statistics, by Sheldon M. Ross (IS)
+ - Introduction to Probability and Statistics for Engineers and Scientists, by
+   Sheldon M. Ross (IPS)
+ - R in Action: Data Analysis and Graphics With R, by Robert I. Kadanoff
+** Recommended readings
+ - How to Lie with Statistics - Darrell Huff 
+* Grading
+The course is divided in 3 periods following roughly the 3 main units described
+in the outline. Each period will consist of several sets of homework problems
+and an exam. Per period grading is as follows:
+ - 40% Homework
+ - 60% Exam
+
+Exam dates and topics will be posted on the Lectures page.
+
+* Homework
+Homework will be posted in the course page after the corresponding lecture. All
+homework must be delivered the indicated date (typically one week after posting)
+without exception and must follow these guidelines:
+ - White pages.
+ - A front page with name, group, date and homework number clearly stated.
+ - Pages stapled together.
+ - All exercises must be clearly delimited with the solution following the
+   instruction. The solution must be clearly written and easy to follow.
+
+Solutions will be posted after the delivery date for each homework.
+
+* Advice to studying
+Do all your homework, read the textbook when assigned to, and dedicate at least
+another 8 hours to the course outside of class. Practice, practice,
+practice. Ask, ask, ask.
+
+Also, the following study guide may be helpful:
+http://www.cse.buffalo.edu/~rapaport/howtostudy.html

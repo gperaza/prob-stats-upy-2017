@@ -1,0 +1,15 @@
+#+TITLE: Probability and Statistics - UPY
+#+SUBTITLE: A first course on probability and statistics on the undergraduate level.
+
+ - Instructor: Gonzalo G. Peraza Mues
+ - email: ~gonzalo.peraza@upy.edu.mx~
+ - Contents:
+   - Descriptive Statistics
+   - Probability
+   - Inferential Statistics
+ - References:
+   - Introduction to Probability and Statistics for Engineers and Scientists, by
+     Sheldon M. Ross
+   - R in Action: Data Analysis and Graphics With R, by Robert I. Kadanoff
+   - OpenIntro Statistics, by Diez, Barr and Çetinkaya-Rundel
+

@@ -1,0 +1,287 @@
+#+Title: Introduction to statistics
+#+Author: Gonzalo G. Peraza Mues
+#+Email: ggperaza@gmail.com
+
+#+OPTIONS: reveal_slide_number:c/t reveal_center:t toc:nil author:t timestamp:nil
+#+OPTIONS: num:nil reveal_progress:nil reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_rolling_links:nil reveal_keyboard:t reveal_overview:t
+#+OPTIONS: reveal_width:1080 reveal_height:920
+# #+REVEAL_MARGIN: 0.1
+# #+REVEAL_MIN_SCALE: 0.5
+# #+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: slide
+#+REVEAL_THEME: white
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ../css/slides.css
+#+REVEAL_DEFAULT_FRAG_STYLE: appear
+
+* An introductory case
+Is it better for children to start school at a younger or older age?
+
+* What does data tells us?
+#+ATTR_REVEAL: :frag (t)
+ - Older students fare better in tests applied at the end of the first year.
+ - Why?
+ - Can we gather more significant data?
+
+#+REVEAL: split
+[[file:img/table_1-1.png]]
+
+* Definition of statistics
+The art of /learning from data/. It is concerned with the collection of data,
+their subsequent description, and their analysis, which often leads to the
+drawing of conclusions.
+
+* DATA
+ - Collecting
+ - Organizing
+ - Analyzing
+ - Interpreting
+
+* The raw material of statistics is /DATA/
+* DATA?
+* Data in statistics
+In statistics, "Data" is conceptualized as having /objects/ on which we observe or
+measure one or more /characteristics/.
+
+* 
+Objects -> Individuals
+ 
+Characteristics -> Variables
+
+* Why variables 
+A characteristics that /varies/ from one individual to another.
+
+* 
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%">
+/individuals/
+ - observations
+ - subjects
+ - objects
+ - cases
+#+REVEAL_HTML: </div> 
+
+#+REVEAL_HTML: <div class="column" style="float:right; width: 50%">
+/variables/
+ - characteristics
+ - attributes
+ - features
+ - traits
+#+REVEAL_HTML: </div> 
+
+* /Variables/ play the starring role in statistical studies
+* 
+Given an object (individual)
+
+#+ATTR_HTML: :width auto :height 200
+[[file:img/apple.jpg]]
+
+What variables (characteristics) can you think about?
+
+**   
+#+ATTR_HTML: :width auto :height 100
+[[file:img/apple.jpg]]
+
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%">
+ - color
+ - flavor
+ - weight
+ - volume
+ - ripeness
+ - region
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%">
+ - calories
+ - sugars
+ - vitamins
+ - seeds
+ - sweetness
+ - skin opacity
+#+REVEAL_HTML: </div>
+
+* 
+#+ATTR_HTML: :width auto :height 200
+[[file:img/fish.png]]
+
+What variables (characteristics) can you think about?
+
+**   
+#+ATTR_HTML: :width auto :height 100
+[[file:img/fish.png]]
+
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%">
+ - length
+ - weight
+ - volume
+ - age
+ - # fins
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%">
+ - sex
+ - diet
+ - size
+ - main color
+ - speed
+#+REVEAL_HTML: </div>
+
+* Variables
+ - Qualitative
+   - non numerical
+   - information
+ - Quantitative
+   - numerical
+   - information
+* Some qualitative variables
+ * Gender of newborn
+   * male, female
+
+ * Icecream flavors
+   * chocolate, vanilla, lemons
+
+ * Types of pasta
+   * spaghetti, tortellini, ravioli
+
+** 
+ * Frequency of usage
+   * never, sometimes, always
+
+ * Clothe sizes
+   * XS, SM, MD, LG, XL
+
+ * Levels of spicyness
+   * none, mild, moderate, high
+
+* Some quantitative variables
+ * Temperature
+   * -10, 0, 15, 45, 70, 100
+
+ * year number
+   * 1776, 1810, 1905, 1999, 2005
+
+** 
+ * age
+   * 19yrs, 22yrs, 25yrs, 24yrs 
+
+ * income
+   * $0, $99.99, $2350, $1000
+
+ * weight
+   - 3kg, 6.5kg, 16.3kg
+* How would you change a /quantitative/ variables into a /qualitative/ one?
+**  
+Converting temperature into a qualitative variables
+
+[[file:img/Thermometer_F_blank_3.jpg]]
+**  
+| Cold   | Mild   | Hot        |
+| < 5 ºC | 5 - 25 | ºC > 25 ºC |
+#+ATTR_HTML: :width auto :height 400
+[[file:img/thermometer-readings.jpg]]
+
+* How would you change a /qualitative/ variables into a /quantitative/ one?
+**  
+Switching to quantitative variables
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%">
+Frequency of usage
+ - never
+ - rarely
+ - sometimes
+ - often
+ - always
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:right; width: 50%">
+Quantifying
+ - times/day
+ - # days
+ - # weeks
+ - months
+ - years
+#+REVEAL_HTML: </div>
+**  
+Switching to quantitative variables
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%">
+Icecream flavors
+ - chocolate
+ - vanilla
+ - lemon
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:right; width: 50%">
+Quantifying
+ - sugar content
+ - milk content
+ - pH
+#+REVEAL_HTML: </div>
+
+* More about quantitative variables
+/Continuous/
+
+/Discrete/
+* Discrete Quantitative Variables
+Takes only a finite number of values or a /countable/ number of values.
+** Discrete Quantitative Variables
+ - Number of days in a year
+ - Number of laps you can swim in 5 minutes
+ - Number of goals in the FIFA World Cup
+* Continuous Quantitative Variable
+Takes on any of the /countless/ number of values in a line interval
+** Continuous Quantitative Variable
+ - Time to run 100 meters
+ - Distance while running 30 minutes
+ - Size of a text file
+* Two types of statistics
+#+ATTR_REVEAL: :frag (t) 
+ - /Descriptive statistics/: The part of statistics concerned with the description
+   and summarization of data.
+ - /Inferential statistics/: The part of statistics concerned with the drawing of
+   conclusions from data.
+
+* Data collection
+#+ATTR_REVEAL: :frag (t)
+ - Existing data sets: government, institutions, etc. Examples:
+   - INEGI: http://www.inegi.org.mx/
+   - World bank open data: http://data.worldbank.org/
+ - Collecting new data from experiments. Examples:
+   - Surveys
+   - Measurements
+
+* Example
+Design an experiment to test a new drug.
+** Variables of interest
+** Unknown variables
+** Reducing influence of unknowns
+ - Control group
+ - Random sampling
+* How sure are we that the results are real?
+#+ATTR_REVEAL: :frag (t)
+ - We need to take into account the influence of chance.
+** Think about a coin
+#+ATTR_REVEAL: :frag (t)
+ - 7 heads out of 10 flips
+ - 47 heads out of 50 flips
+** Probability models
+ - Assumptions about the chances (probabilities).
+* Population
+The total collection of all the elements that we are interested in.
+** Sample
+#+ATTR_REVEAL: :frag (t)
+ - A subgroup of the population that we study in detail.
+ - Must be /representative/ about the population.
+ - It is /always/ an approximation.
+ - How do we choose a sample?
+** Random sampling
+A /sample/ of /k/ members of a population is said to be a /random sampling/ if the
+members are chosen in such a way that all possible choices of the /k/ members are
+equally likely.
+
+** Conclusion from the data are always exact for the sample, but never for the population.
+
+** Stratified random sampling
+* Recommended reading
+How to Lie with Statistics
+
+Darrell Huff
+
+* 
+[[file:img/exce-1.png]]
+** 
+[[file:img/exce-2.png]]

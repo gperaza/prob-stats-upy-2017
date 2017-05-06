@@ -1,0 +1,8 @@
+#+TITLE: Lectures
+
+Tentative course outline:
+
+| Lecture | Topic              |
+|       0 | [[file:~/Documents/Teaching/Mathematical-Functions-May-Ago-2017-UPY/lectures/00-about-course.org][About the course]]   |
+|       1 | Review of Geometry |
+|       2 | Functions          |

@@ -1,0 +1,361 @@
+#+Title: Using Statistics to Summarize Data Sets
+#+Author: Gonzalo G. Peraza Mues
+#+Email: ggperaza@gmail.com
+
+#+OPTIONS: reveal_slide_number:c/t reveal_center:t toc:nil author:t timestamp:nil
+#+OPTIONS: num:nil reveal_progress:nil reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_rolling_links:nil reveal_keyboard:t reveal_overview:t
+#+OPTIONS: reveal_width:1080 reveal_height:920
+# #+REVEAL_MARGIN: 0.1
+# #+REVEAL_MIN_SCALE: 0.5
+# #+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: slide
+#+REVEAL_THEME: white
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ../css/slides.css
+#+REVEAL_DEFAULT_FRAG_STYLE: appear
+#+REVEAL_MATHJAX: t
+#+REVEAL_MATHJAX_URL: ../MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+* Numerical quantities computed from a data set are called /statistics/.
+* Measures of Center
+:PROPERTIES:
+:reveal_background: #f49842
+:END:
+* /Sample Mean/
+\[\bar{x} = \frac{\sum_{i=1}^{n}{x_{i}}}{n}\]
+** Example 
+The average fuel efficiencies, in miles per gallon, of cars sold in the United
+States in the years 1999 to 2003 were
+
+28.2, 28.3, 28.4, 28.5, 29.0
+
+**  
+If each data value is increased by a constant amount $c$, then this causes the
+sample mean also to be increased by $c$.
+
+\[y_{i} = x_{i} + c\]
+
+Then
+
+\[\bar{y} = \bar{x} + c\]
+** Example
+The winning scores in the U.S. Masters Golf Tournament in the years from 1981 to
+1990 were as follows:
+
+280, 284, 280, 277, 282, 279, 285, 281, 283, 278
+** 
+If each data value is multiplied by $c$, then so is the sample mean.
+
+\[y_{i} = cx_{i}\]
+
+Then
+
+\[\bar{y} = c\bar{x}\]
+** Weighted average
+\[ \bar{x} = \frac{\sum_{i=1}^n f_i x_i}{\sum_{i=1}^{n}f_i} =  \sum_{i=1}^n w_i x_i\]
+
+Where
+
+\[ w_i = \frac{f_i}{\sum_{i=1}^{n}f_{i}} = \frac{f_{i}}{n}\]
+** Example
+Age of members of a symphony orchestra for young adults.
+
+| Age | Frequency |
+|-----+-----------|
+|  15 |         2 |
+|  16 |         5 |
+|  17 |        11 |
+|  18 |         9 |
+|  19 |        14 |
+|  20 |        13 |
+
+** 
+The /deviations/ are the differences between the data values and the sample
+mean.
+
+\[ x_{i} - \bar{x} \]
+
+The following identity is always true
+
+\[ \sum_{i=1}^{n}\left(x_{i} - \bar{x} \right) = 0\]
+
+** Example
+Number of weeks after completion of a learn-to- drive course that it took a
+sample of seven people to obtain a driver’s license.
+
+2, 110, 5, 7, 6, 7, 3
+
+#+ATTR_REVEAL: :frag (t)
+/Its value is greatly affected by extreme data values./
+
+* /Sample Median/
+Order the values of a data set of size $n$ from smallest to largest. If $n$ is /odd/,
+the /sample median/ is the value in position $\frac{n + 1}{2}$; if $n$ is /even/, it is the
+/average/ of the values in positions $\frac{n}{2}$ and $\frac{n}{2} + 1$.
+
+
+** Example
+Number of weeks after completion of a learn-to- drive course that it took a
+sample of seven people to obtain a driver’s license.
+
+2, 110, 5, 7, 6, 7, 3
+
+** Examples
+Number of days it took 6 individuals to quit smoking after completing a course
+designed for this purpose.
+
+1, 2, 3, 5, 8, 100
+
+* 
+The /sample mean/ makes use of /all the data/ values. 
+
+The /sample median/ is not affected by /extreme values/.
+
+** 
+For roughly /symmetric/ data sets the sample mean and sample median will have
+values /close/ to each other.
+
+** Example
+4, 6, 8, 8, 9, 12, 15, 17, 19, 20, 22
+
+** Example
+A group of 5-week-old mice were each given a radiation dose of 300 rad.
+
+[[file:img/example_2_3.png]]
+
+* /Samples Mode/
+The data value that occurs with the /greatest frequency/. 
+** Examples
+40 roles of a dice.
+
+[[file:img/example_2_5.png]]
+
+** 
+If no single value occurs most frequently, then all the values that occur at
+the highest frequency are called /modal values/.
+* 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/Comparison_mean_median_mode.svg]]
+** 
+#+ATTR_HTML: :width auto :height 600
+[[file:img/Visualisation_mode_median_mean.svg]]
+* Measures of Spread
+:PROPERTIES:
+:reveal_background: #f49842
+:END:
+* /Range/
+Difference between the largest and smallest values of a data distribution.
+** Example
+Apple weight values
+
+5, 6, 7, 7, 6, 8, 6, 9, 10, 8
+* /Root Mean Squared (R.M.S.)/
+Provides an idea of the size of the values.
+
+\[ r.m.s.= \sqrt{\frac{\sum_{i=1}^n x_i^2}{n}} \]
+** Example
+How small or big are this values?
+
+0, 5, -8, 7, -3
+* /Samples Variance/
+Describe the spread or variability of the data values.
+
+\[s^{2} = \frac{\sum_{i=1}^n \left( x_i - \bar{x} \right)^2}{n - 1}\]
+** Example
+A: 3, 4, 6, 7, 10     B: -20, 5, 15, 24
+
+** 
+\[ \sum_{i=1}^n \left( x_i - \bar{x}  \right)^2 = \sum_{i=1}^n x_i^2 - n\bar{x}^2 \]
+
+** 
+The sample variance remains unchanged when a constant is added to each data
+value.
+
+\[ y_i = x_i + c \]
+
+Then
+
+\[ y_i - \bar{y} = (x_i + c) - (\bar{x} + c) = x_i -\bar{x} \]
+
+** 
+If each data value is multiplied by a constant $c$ then the sample variance of
+the new data is the sample variance of the old data multiplied by $c^2$.
+
+\[y_i = cx_i\]
+
+Then
+
+\[s_y^2 = c^2 s_x^2\]
+
+** Example
+Worldwide number of fatal airline accidents in the years from 1997 to 2005.
+
+[[file:img/example_2_6.png]]
+* /Sample Standard Deviation/
+\[s = \sqrt{\frac{\sum_{i=1}^n \left( x_i - \bar{x}  \right)^2}{n - 1}} = \sqrt{s^2}\]
+** 
+\[y_i = cx_i\]
+
+Then
+
+\[s_y = \left|c\right| s_x\]
+* /Mean Absolute Deviation/
+\[ MAD = \frac{\sum_{i=1}^n \left| x_i - \bar{x} \right|}{n}  \]
+
+** SD vs MAD
+ - SD > MAD
+ - MAD is easier to understand
+ - SD is easier to work with
+ - SD is more widely used
+
+/Read/: [[http://www.leeds.ac.uk/educol/documents/00003759.htm][Revisiting a 90-year-old debate: the advantages of the mean deviation]] by Stephen Gorard
+
+* /Sample Percentiles/
+The sample $100p$ percentile is that data value such that at least $100p$
+percent of the data are less than or equal to it and at least $100(1 − p)$
+percent are greater than or equal to it. If two data values satisfy this
+condition, then the sample $100p$ percentile is the arithmetic average of these
+two values.
+
+** 
+To find the sample $100p$ percentile of a data set of size $n$
+ 1. Arrange the data in increasing order.
+ 2. If $np$ is not an integer, determine the smallest integer greater than $np$. The data
+    value in that position is the sample $100p$ percentile.
+ 3. If $np$ is an integer, then the average of the values in positions $np$ and
+    $np + 1$ is the sample 100p percentile.
+
+** Example
+Which data value is the sample 90th percentile when the sample size is (a) 8,
+(b) 16, and (c) 100?
+
+** Quartiles
+ - The sample /25th percentile/ is called the /first quartile/.
+ -  The sample /50th percentile/ is called the /median/ or the /second quartile/.
+ -  The sample /75th/ percentile is called the /third quartile/.
+
+The quartiles break up a data set into four parts.
+
+** Example
+36 noise levels outside of Grand Central Station in Manhattan in dB.
+
+[[file:img/example_2_4.png]]
+* /Interquartile range/
+3rd quartile - 1st quartile
+
+Length of the /interval/ in which the middle /half of the data/ values lie.
+** Example
+[[file:img/table_3_2.png]]
+** Box Plot
+[[file:img/box-plot.png]]
+# * /Chebyshev's Inequality/
+# For any value of $k \geq 1$; greater than 
+
+# \[ 100(1 − \frac{1}{k^2}) \] 
+
+# percent of the data lie within the interval 
+
+# \[(\bar{x} − ks,\bar{x} +ks)\]
+# ** 
+#  - $k=1.5$: 55.6% of the data lies within $1.5s$ from the mean.
+#  - $k=2$: 75% of the data lies within $2s$ from the mean.
+#  - $k=3$: 88.9% of the data lies within $3s$ from the mean.
+# ** Proof
+#  - Start with $(n-1)s^2$
+* Normal Data Sets
+:PROPERTIES:
+:reveal_background: #f49842
+:END:
+
+** Definition
+A data set is said to be normal if a histogram describing it has the following
+properties:
+ - It is highest at the middle interval.
+ - Moving from the middle interval in either direction, the height decreases in
+   such a way that the entire histogram is bell-shaped.
+ - The histogram is symmetric about its middle interval.
+** Normal data set
+[[file:img/nomal-hist.png]]
+** Skewed to the right
+[[file:img/right-skewed-hist.png]]
+** Skewed to the left
+[[file:img/left-skewed-hist.png]]
+** Empirical rule
+ - Approximately /68%/ of the observations lie within /$\bar{x} \pm s$/
+ - Approximately /95%/ of the observations lie within /$\bar{x} \pm 2s$/
+ - Approximately /99.7%/ of the observations lie within /$\bar{x} \pm 3s$/
+
+** Example
+Scores on a statistics exam
+
+[[file:img/example_2_7.png]]
+
+
+** Bimodal data sets
+A data set that is obtained by sampling from a population that is itself made up
+of subpopulations.
+
+[[file:img/bimodal-hist.png]]
+* /The normal curve/
+#+ATTR_HTML: :width auto :height 400
+[[file:img/normal-curve-progression.gif]]
+** 
+\[ y = \frac{1}{2\pi}e^{-\frac{x^2}{2}}  \]
+** 
+[[file:img/normal-curve-1.png]]
+** 
+[[file:img/normal-curve-2.png]]
+** 
+[[file:img/normal-curve-3.png]]
+** Total area under the curve = 1
+#+ATTR_HTML: :width auto :height 400
+[[file:img/normal-curve-4.png]]
+
+\[ \int_{-\infty}^{\infty}\frac{1}{2\pi}e^{-\frac{x^2}{2}}dx = 1\]
+
+** Empirical rule
+[[file:img/Empirical_Rule.png]]
+
+* Sets of paired data
+
+\[(x_i,y_i)\]
+
+[[file:img/table_2-12.png]]
+** Scatter diagram
+[[file:img/fig_2_13.png]]
+
+\[r = 0.4189 \]
+** Sample Correlation Coefficient
+\[ r = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{(n-1) s_x s_y} \]
+
+\[ r = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n
+(x_i-\bar{x})^2 \sum_{i=1}^n(y_i-\bar{y})^2}} \]
+
+** Properties of r
+ - $-1 \leq r \leq 1$
+ - If for constants $a$ and $b$, $y_i = a + bx_i$ then:
+   - $r=1$ if $b>0$
+   - $r=-1$ if $b<0$
+ - $r(x_i,y_i) = r(a + bx_i, c + dy_i)$ if $sign(b) = sign(d)$
+** 
+ - $\left|r\right| = 1$ means a perfect linear relationship between data
+ - $\left|r\right| < 1$ gives the strength of the correlation
+ - $sign(r)$ gives the direction of the correlation.
+
+** 
+[[file:img/fig_2_14b.png]]
+** Example
+Resting pulse rates (in beats per minute) and the years of schooling of 10
+individuals. ($r = -0.7639$)
+
+[[file:img/example_2_8.png]]
+
+[[file:img/fig_2_15b.png]]
+
+** Proof
+ - Start with $\sum\left( \frac{x_i-\bar{x}}{s_x} - \frac{y_i-\bar{y}}{s_y}
+   \right)^2 \geq 0$
+** Correlation measures association, not causation
+Often, the explanation for such an association lies with an unexpressed factor
+that is related to both variables under consideration.

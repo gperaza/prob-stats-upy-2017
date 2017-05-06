@@ -1,0 +1,193 @@
+#!/bin/sh
+":"; exec emacs --quick --script "$0" "$@" # -*- mode: emacs-lisp; lexical-binding: t; -*-
+
+;;; Commentary:
+;; This excecutable Emacs script provides minimal configuration to setup project
+;; export.
+
+;;; Code:
+
+(setq debug-on-error t)
+
+(defvar my-org-file (format "%s" (pop argv)))
+
+(princ (format "Processing file: %s\n" my-org-file))
+
+;;(kill-emacs 0)
+
+(require 'org)
+(require 'ox)
+(require 'ox-html)
+(require 'ox-publish)
+
+(setq auto-save-default nil) ; disable auto-save files (#foo#)
+(setq backup-inhibited t)    ; disable backup files (foo~)
+
+(setq org-publish-use-timestamps-flag nil)
+(setq org-html-htmlize-output-type 'css)
+(setq org-export-babel-evaluate nil) ;; Don't evaluate on export by default.
+
+;; (setq org-html-viewport
+;;       '((width "device-width")
+;;         (initial-scale "1")
+;;         (minimum-scale "")
+;;         (maximum-scale "1")
+;;         (user-scalable "")))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)
+   (sh . t)
+   (org . t)
+   (C . t)
+   (latex . t)
+   (awk . t)
+   (gnuplot . t)))
+
+(setq
+ org-html-mathjax-options
+ '((path
+    "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML")
+   (scale "100")
+   (align "center")
+   (font "TeX")
+   (linebreaks "false")
+   (autonumber "AMS")
+   (indent "0em")
+   (multlinewidth "85%")
+   (tagindent ".8em")
+   (tagside "right")))
+
+(setq org-html--pre/postamble-class "sidebar")
+
+(defun build-nav-link (name link baseurl)
+  "Build the sidebar link with the appropriate class.
+NAME LINK BASEURL"
+  (let ((status (if (string=
+                     (car (last (split-string
+                            (car (split-string link "\\."       )) "/")))
+                     (car (last (split-string
+                            (car (split-string my-org-file "\\.")) "/"))))
+                    " active" "")))
+    (format "<a class=\"sidebar-nav-item%s\" href=\"%s%s\">%s</a>\n"
+            status baseurl link name)))
+
+(defvar index-base-url
+  (if (string=
+       (car (last (split-string (car (split-string my-org-file "\\.")) "/")))
+       "index")
+      "" "../"))
+
+(defvar page-base-url
+  (if (string=
+       (car (last (split-string (car (split-string my-org-file "\\.")) "/")))
+       "index")
+      "pages-html/" ""))
+
+(setq org-html-metadata-timestamp-format "%Y-%m-%d")
+(setq org-html-preamble
+      (concat
+       "<div class=\"container sidebar-sticky\">\n"
+       "<div class=\"sidebar-about\">\n"
+       "<h1>\n"
+       (concat "<a href=\"" index-base-url
+               "index.html\"> Probability & Statistics  </a>\n")
+       "</h1>\n"
+       "<p class=\"lead\">A UPY Course</p>\n"
+       "</div>\n\n"
+       "<nav class=\"sidebar-nav\">\n"
+       (build-nav-link "Home" "index.html" index-base-url)
+       (build-nav-link "Syllabus" "syllabus.html" page-base-url)
+       (build-nav-link "Lectures" "lectures.html" page-base-url)
+       (build-nav-link "Homework" "homework.html" page-base-url)
+       (build-nav-link "Grades" "grades.html" page-base-url)
+       (build-nav-link "Github repo"
+                       "https://github.com/gperaza/prob-stats-upy-2017" "")
+       "<span class=\"sidebar-nav-item\">May-June 2017</span>\n"
+       "</nav>\n\n"
+       "<p>&copy\; %a. %C</p>\n"
+       "</div>\n"))
+
+(defun build-head-link (rel link)
+  "Build the head link with the appropriate class.
+REL LINK"
+  (format "<link rel=\"%s\" href=\"%s\">\n"
+          rel link))
+
+(setq org-html-head-include-default-style nil)
+(setq org-html-head-include-scripts nil)
+(setq org-html-head
+      (concat
+       "<link href=\"http://gmpg.org/xfn/11\" rel=\"profile\">\n"
+       "\n"
+       "<!-- CSS -->\n"
+       (build-head-link "stylesheet"
+                        (concat index-base-url
+                                "pages-html/public/css/poole.css"))
+       (build-head-link "stylesheet"
+                        (concat index-base-url
+                                "pages-html/public/css/syntax.css"))
+       (build-head-link "stylesheet"
+                        (concat index-base-url
+                                "pages-html/public/css/hyde.css"))
+       (build-head-link "stylesheet"
+                        (concat
+                         "https://fonts.googleapis.com/"
+                         "css?family=PT+Sans:400,400italic,700|Abril+Fatface"))
+       "\n"
+       "<!-- Icons -->\n"
+       (build-head-link "apple-touch-icon"
+                        (concat index-base-url
+                                "pages-html/public/UPY-favicon.png"))
+       (build-head-link "shortcut icon"
+                        (concat index-base-url
+                                "pages-html/public/favicon.ico"))))
+
+(setq org-export-headline-levels 4)
+
+(add-to-list 'org-export-options-alist
+             '(:subtitle "SUBTITLE" nil nil parse) t)
+
+(defun org-html-template (contents info)
+  "Return complete document string after HTML conversion.
+CONTENTS is the transcoded contents string.  INFO is a plist
+holding export options."
+  (concat
+   "<!DOCTYPE html>\n"
+   "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en-us\">\n\n"
+   ;; Head
+   "<head>\n"
+   (org-html--build-meta-info info)
+   (org-html--build-head info)
+   (org-html--build-mathjax-config info)
+
+   "<!-- Enable responsiveness on mobile devices-->\n"
+   "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1\">\n"
+   "</head>\n"
+   ;; Body
+   "<body class=\"theme-base-upy\">\n"
+   ;; Preamble. Sidebar.
+   (org-html--build-pre/postamble 'preamble info)
+   ;; Document contents.
+   "<div class=\"content container\">\n<div class=\"page\">"
+   ;; Document title.
+     (let ((title (plist-get info :title))
+           (subtitle (plist-get info :subtitle)))
+       (when title
+         (format "<h1 class=\"page-title\">%s</h1>\n%s"
+                 (org-export-data title info)
+                 (if subtitle
+                     (format "<p class=\"message\">%s</p>\n"
+                             (org-export-data subtitle info))
+                   ""))))
+   contents
+   "</div>\n</div>"
+   ;; Closing document.
+   "</body>\n</html>"))
+
+(with-current-buffer
+    (find-file-noselect my-org-file)
+  (org-html-export-to-html))
+
+(kill-emacs 0)

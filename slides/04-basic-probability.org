@@ -1,0 +1,330 @@
+#+Title: Introduction to probability
+#+Author: Gonzalo G. Peraza Mues
+#+Email: ggperaza@gmail.com
+
+#+OPTIONS: reveal_slide_number:c/t reveal_center:t toc:nil author:t timestamp:nil
+#+OPTIONS: num:nil reveal_progress:nil reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_rolling_links:nil reveal_keyboard:t reveal_overview:t
+#+OPTIONS: reveal_width:1080 reveal_height:920
+# #+REVEAL_MARGIN: 0.1
+# #+REVEAL_MIN_SCALE: 0.5
+# #+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: slide
+#+REVEAL_THEME: white
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ../css/slides.css
+#+REVEAL_DEFAULT_FRAG_STYLE: appear
+#+REVEAL_MATHJAX: t
+#+REVEAL_MATHJAX_URL: ../MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+* Definition
+An /experiment/ is any process that produces an observation or /outcome/. The set of
+all possible outcomes of an experiment is called the /sample space $S$/.
+
+** Examples
+** The gender of a child.
+\[ S = \left\{ g, b \right\}\]
+** Flipping two coins
+\[ S = \left\{ (H,H),(H,T),(T,H),(T,T)\right\}\]
+** Order of finish in a race among 7 horses
+\[ S = \left\{ \text{all permutations of 1,2,3,4,5,6,7} \right\}\]
+** Rolling two six-sided dice
+\[ \begin{split}
+S = \left\{ (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6),\\
+ (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6),\\
+ (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6),\\
+ (4, 1), (4, 2),(4, 3), (4, 4), (4, 5), (4, 6),\\
+ (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6),\\
+ (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6) \right\}
+ \end{split} \]
+
+* Definition
+Any set of outcomes of the experiment is called an /event/. We designate events by
+the letters $A$, $B$, $C$, and so on. We say that the event $A$ /occurs/ whenever
+the outcome is contained in $A$.
+
+** Examples
+** The gender of a child.
+\[ S = \left\{ g, b \right\}\]
+ - $A=\{g\}$ is the event that the child is a girl.
+ - $B=\{b\}$ is the event that the child is a boy.
+** Flipping two coins
+\[ S = \left\{ (H,H),(H,T),(T,H),(T,T)\right\}\]
+ - $A = \{(H, H), (H, T)\}$ is the event that the first coin lands on heads.
+** Order of finish in a race among 7 horses
+\[ S = \left\{ \text{all permutations of 1,2,3,4,5,6,7} \right\}\]
+ - $A = \{\text{all outcomes in S starting with 2}\}$ is the event that horse
+   number 2 wins the race.
+** Rolling two six-sided dice
+\[ \begin{split}
+S = \left\{ (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6),\\
+ (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6),\\
+ (3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6),\\
+ (4, 1), (4, 2),(4, 3), (4, 4), (4, 5), (4, 6),\\
+ (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6),\\
+ (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6) \right\}
+ \end{split} \]
+ - $A = \{(1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1)\}$ is the event that
+   the sum of the dice is 7
+* Union of events
+\[A \cup B\]
+
+#+ATTR_HTML: :width auto :height 400
+[[file:img/venn-union.png]]
+** Examples
+** The gender of a child.
+\[ S = \left\{ g, b \right\}\]
+ - $A=\{g\}$ is the event that the child is a girl.
+ - $B=\{b\}$ is the event that the child is a boy.
+
+ - $A\cup B = \{g,b\} = S$
+** Order of finish in a race among 7 horses
+ - $A = \{\text{all outcomes starting with 4}\}$
+ - $B = \{\text{all outcomes in with seconf element equal to 2}\}$
+
+ - $A\cup B$ is the event that either the number 4 horse wins or the number 2
+   horse comes in second or both.
+
+* Intersection of events
+\[A \cap B\]
+
+#+ATTR_HTML: :width auto :height 400
+[[file:img/venn-intersection.png]]
+** Examples
+** Flipping two coins
+\[ S = \left\{ (H,H),(H,T),(T,H),(T,T)\right\}\]
+ - $A = \{(H, H), (H, T)\}$ is the event that the first coin lands on heads.
+ - $B = \{(H, T, (T, T)\}$ is the event that the second coin lands on tails.
+
+ - $A \cap B = \{H,T\}$
+
+** Order of finish in a race among 7 horses
+ - $A = \{\text{all outcomes starting with 2}\}$
+ - $B = \{\text{all outcomes starting with 3}\}$
+
+ - $A \cap B = \emptyset$ is the /null event/ or /empty set/.
+
+** Disjoint or mutually exclusive events
+\[ A\cap B = \emptyset\]
+
+[[file:img/disjoint.png]]
+* Complement
+All outcomes in the sample space that are not in $A$.
+
+[[file:img/SetComplement.png]]
+
+\[ A^{c} \]
+
+\[ S^{c} = \emptyset \]
+
+** Example: Gender of a child.
+\[ S = \left\{ g, b \right\}\]
+
+ - $A=\{g\}$ is the event that the child is a girl.
+
+ - $A^{c} = \{b\}$
+* Properties of probability
+For each event $A$ there is a number, denoted $P(A)$ and called the /probability/
+of event $A$.
+
+ - $0 \leq P(A) \leq 1$
+ - $P(S) = 1$
+ - $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+
+$P(A)$ is the /long run frequency/ of event A.
+
+** Addition rule of probability
+\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]
+#+ATTR_HTML: :width auto :height 400
+[[file:img/venn-intersection.png]]
+
+** Probability of the complement
+\[ P(A^{c}) = 1 - P(A) \]
+** Examples
+** 
+A certain retail establishment accepts either the American Express or the VISA
+credit card. A total of 22 percent of its customers carry an American Express
+card, 58 percent carry a VISA credit card, and 14 percent carry both. What is
+the probability that a customer will have at least one of these cards?
+
+** Tossing a coin and roll of a die
+[[file:Sup-1-coin-dice.html][An R simulation.]]
+* Equiprobability
+Some processes are expected to have equally likely outcomes (coin, dice, etc.).
+\[ S = \{1,2,\ldots,N\}\]
+
+\[ P(\{1\}=P(\{2\})=\cdots=P(\{N\}) \]
+
+** Then
+
+\[ P(A) = \frac{\text{number of outcoms in S that are in A}}{N}  \]
+
+** Examples
+** 
+In a survey of 420 members of a retirement center, it was found that 144 are
+smokers and 276 are not. If a member is selected in such a way that each of the
+members is equally likely to be the one selected, what is the probability that
+person is a smoker?
+** 
+Suppose that when two dice are rolled, each of the 36 possible outcomes is
+equally likely. Find the probability that the sum of the dice is 6 and that it
+is 7.
+** 
+One man and one woman are to be selected from a group that consists of 10
+married couples. If all possible selections are equally likely, what is the
+probability that the woman and man selected are married to each other?
+** 
+An elementary school is offering two optional language classes, one in French
+and the other in Spanish. These classes are open to any of the 120 upper-grade
+students in the school. Suppose there are 32 students in the French class, 36 in
+the Spanish class, and a total of 8 who are in both classes. If an upper-grade
+student is randomly chosen, what is the probability that this student is
+enrolled in at least one of these classes?
+* Conditional probability
+If some partial information concerning the outcome of the experiment is
+available we have /conditional probabilities/.
+
+** 
+The conditional probability of $B$ given that $A$ has occurred:
+\[ P(B|A) = \frac{P(A \cap B)}{P(A)}  \]
+
+[[file:img/venn-intersection.png]]
+
+** Examples
+** 
+As a further check of the preceding formula for the conditional probability, use
+it to compute the conditional probability that the sum of a pair of rolled dice
+is 10, given that the first die lands on 4.
+** 
+The organization that employs Jacobi is organizing a parent-daughter dinner for
+those employees having at least one daughter. Each of these employees is asked
+to attend along with one of his or her daughters. If Jacobi is known to have two
+children, what is the conditional probability that they are both girls given
+that Jacobi is invited to the dinner? Assume the sample space S is given by
+
+\[S = \{(g, g), (g, b), (b, g), (b, b)\}\]
+
+and that all these outcomes are equally likely, where the outcome (g, b) means,
+for instance, that Jacobi’s oldest child is a girl and youngest is a boy.
+** Multiplication rule
+
+\[ P(A \cap B) = P(A)P(B|A)  \]
+** Examples
+** 
+Suppose that two people are randomly chosen from a group of 4 women and
+6 men.
+ a. What is the probability that both are women?
+ b. What is the probability that one is a woman and the other a man?
+** Independent events
+Events A and B are /independent/ if
+
+\[ P(A \cap B) = P(A)P(B) \]
+
+Note that this means
+
+\[ P(B|A) = P(B) \]
+
+** Examples
+** 
+Suppose that we roll a pair of fair dice, so each of the 36 possible outcomes is
+equally likely. Let A denote the event that the first die lands on 3, let B be
+the event that the sum of the dice is 8, and let C be the event that the sum of
+the dice is 7.
+
+a. Are A and B independent?
+b. Are A and C independent?
+** 
+A couple is planning on having three children. Assuming that each child is
+equally likely to be of either sex and that the sexes of the children are
+independent, find the probability that
+
+a. All three children will be girls.
+b. At least one child will be a girl.
+* Bayes' theorem
+H is the event a hypothesis is true.
+E is evidence concerning the hypothesis.
+
+\[  P(H|E) = \frac{P(E|H)P(H)}{P(E|H)P(H) + P(E|H^{c})P(H^{c})} \]
+** Proof
+Consider the following equation
+\[ P(A) = P(A|B)P(B) + P(A|B^c)P(B^c)\]
+
+By the definition of conditional probability
+
+\[ P(H|E) = \frac{P(H \cap E)}{P(E)} = \frac{P(E|H)P(H)}{P(E)} \]
+
+Combining both equations gives us Bayes' theorem.
+
+** Examples
+** 
+An insurance company believes that people can be divided into two classes— those
+who are prone to have accidents and those who are not. The data indicate that an
+accident-prone person will have an accident in a 1-year period with probability
+0.1; the probability for all others is 0.05. Suppose that the probability is 0.2
+that a new policyholder is accident-prone.
+
+a. What is the probability that a new policyholder will have an accident in the
+   first year?
+b. If a new policyholder has an accident in the first year, what is the
+   probability that he or she is accident-prone?
+** 
+A blood test is 99 percent effective in detecting a certain disease when the
+dis- ease is present. However, the test also yields a false-positive result for
+2 percent of the healthy patients tested. (That is, if a healthy person is
+tested, then with probability 0.02 the test will say that this person has the
+disease.) Suppose 0.5 percent of the population has the disease. Find the
+conditional probability that a randomly tested individual actually has the
+disease given that his or her test result is positive.
+
+* Counting principles
+/Basic principle of counting/: 
+
+Suppose an experiment consists of two parts. If /part 1/ can result in any of /n/
+possible outcomes and if for each outcome of part 1 there are /m/ possible
+outcomes of /part 2/, then there is a total of /nm/ possible outcomes of the
+experiment.
+** Examples
+** 
+One man and one woman are to be selected from a group consisting of 12 women and
+8 men. How many different choices are possible?
+** 
+Two people are to be selected from a group that consists of 10 married couples.
+How many different choices are possible? If each choice is equally likely, what
+is the probability that the two people selected are married to each other?
+** Generalized Basic Principle of Counting
+Suppose an experiment consists of /r/ parts. Suppose there are /$n_1$/ possible
+outcomes of part 1 and then /$n_2$/ possible outcomes of part 2 and then /$n_3$/
+possible outcomes of part 3, and so on. Then there is a total of $n_1 \cdot n_2
+\cdots n_r$ possible outcomes of the experiment.
+** Permutation of n objects
+\[ n! = n \cdot (n-1) \cdot (n-2) \cdots 3\cdot 2\cdot 1\]
+** Examples
+** 
+If four people are in a room, what is the probability that no two of them
+celebrate their birthday on the same day of the year?
+** Combination of n objects taken r at a time
+\[ \binom n r = \frac{n!}{(n - r)!r!}\]
+** Examples
+** 
+a. How many different groups of size 2 can be selected from the items a, b, c?
+b. How many different groups of size 2 can be chosen from a set of 6 people?
+c. How many different groups of size 3 can be chosen from a set of 6 people?
+** 
+A random sample of size 3 is to be selected from a set of 10 items. What is the
+probability that a prespecified item will be selected?
+** 
+A committee of 4 people is to be selected from a group of 5 men and 7 women.  If
+the selection is made randomly, what is the probability the committee will
+consist of 2 men and 2 women?
+** Symmetry
+\[ \binom nr = \frac{n!}{(n - r)!r!} = \binom n {n - r}\]
+** Examples
+** 
+Compare $\binom 8 5$ and $\binom {12} {10}$.
+** 
+Suppose that n + m digits, n of which are equal to 1 and m of which are equal to
+0, are to be arranged in a linear order. How many different arrangements are
+possible? For instance, if n = 2 and m = 1, then there are 3 possible
+arrangements:
+
+\[1, 1, 0 \quad  1, 0, 1 \quad   0, 1, 1\]
