@@ -4,7 +4,7 @@ grades_html = RoboA.html RoboB.html RoboC.html RoboD.html Embeb.html
 grades_html := $(addprefix $(grades_html_dir)/,$(grades_html))
 
 site_html_dir = pages-html
-pages_html = syllabus.html homework.html
+pages_html = syllabus.html homework.html labs.html
 pages_html += lectures.html grades.html
 pages_html := $(addprefix $(site_html_dir)/,$(pages_html))
 

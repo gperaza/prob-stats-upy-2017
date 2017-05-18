@@ -101,6 +101,7 @@ NAME LINK BASEURL"
        (build-nav-link "Syllabus" "syllabus.html" page-base-url)
        (build-nav-link "Lectures" "lectures.html" page-base-url)
        (build-nav-link "Homework" "homework.html" page-base-url)
+       (build-nav-link "Labs" "labs.html" page-base-url)
        (build-nav-link "Grades" "grades.html" page-base-url)
        (build-nav-link "Github repo"
                        "https://github.com/gperaza/prob-stats-upy-2017" "")
