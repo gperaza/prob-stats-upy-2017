@@ -1,0 +1,29 @@
+#+TITLE: Labs
+#+OPTIONS: toc:nil num:nil
+During the course we are going to learn basic data analysis with the R
+programming language. There exist several interfaces for working with R, we are
+going to work with the provided Jupyter notebooks below. Computers at UPY +have
+everything already set up+ will hopefully have everything setup soon, if you
+want to practice at home be sure to install both Jupyter Notebook and R. To
+download the notebooks follow the link and find the download button at the top
+of the page; or clone the github repository.
+
+| [[http://nbviewer.jupyter.org/github/gperaza/prob-stats-upy-2017/blob/master/labs/01-Introduction_to_R_and_Jupyter.ipynb#][01. Introduction to R and Jupyter]] |
+| 02. Introduction to data          |
+
+* Installing Jupyter and R
+The easier way to install both Jupyter and R with the interface between them
+configured automatically is to install first the Anaconda Python
+distribution. After you have Anaconda installed do the following:
+
+** Windows
+Open the program called "anaconda prompt" and input the following command:
+#+BEGIN_SRC sh
+conda install -c r r-essentials
+#+END_SRC
+
+** Linux and Mac
+Run the following command in the terminal
+#+BEGIN_SRC sh
+conda install -c r r-essentials
+#+END_SRC
