@@ -4,6 +4,6 @@ Tentative course outline:
 
 | Lecture | Topic                      | Slides                      |
 |---------+----------------------------+-----------------------------|
-|       1 | Introduction to Statistics | [[file:~/Documents/Teaching/Probability-and-Statistics-May-Ago-2017-UPY/slides/01-intro-to-stats.pdf][01-intro-to-stats.pdf]]       |
-|       2 | Describing Data Sets       | [[file:~/Documents/Teaching/Probability-and-Statistics-May-Ago-2017-UPY/slides/02-describing-data-sets.pdf][02-describing-data-sets.pdf]] |
-|       3 | Summarizing Data Sets      | [[file:~/Documents/Teaching/Probability-and-Statistics-May-Ago-2017-UPY/slides/03-summarize-data.pdf][03-summarizing-data.pdf]]     |
+|       1 | Introduction to Statistics | [[file:../slides/01-intro-to-stats.pdf][01-intro-to-stats.pdf]]       |
+|       2 | Describing Data Sets       | [[file:../slides/02-describing-data-sets.pdf][02-describing-data-sets.pdf]] |
+|       3 | Summarizing Data Sets      | [[file:../slides/03-summarize-data.pdf][03-summarizing-data.pdf]]     |
