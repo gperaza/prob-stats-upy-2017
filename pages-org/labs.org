@@ -9,7 +9,7 @@ download the notebooks follow the link and find the download button at the top
 of the page; or clone the github repository.
 
 | [[http://nbviewer.jupyter.org/github/gperaza/prob-stats-upy-2017/blob/master/labs/01-Introduction_to_R_and_Jupyter.ipynb#][01. Introduction to R and Jupyter]] |
-| 02. Introduction to data          |
+| [[http://nbviewer.jupyter.org/github/gperaza/prob-stats-upy-2017/blob/master/labs/02-Introduction_to_data.ipynb#][02. Introduction to data]]          |
 
 * Installing Jupyter and R
 The easier way to install both Jupyter and R with the interface between them
