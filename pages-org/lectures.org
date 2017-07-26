@@ -2,11 +2,13 @@
 
 Tentative course outline:
 
-| Lecture | Topic                       | Slides                             |
-|---------+-----------------------------+------------------------------------|
-|       1 | Introduction to Statistics  | [[file:../slides/01-intro-to-stats.pdf][01-intro-to-stats.pdf]]              |
-|       2 | Describing Data Sets        | [[file:../slides/02-describing-data-sets.pdf][02-describing-data-sets.pdf]]        |
-|       3 | Summarizing Data Sets       | [[file:../slides/03-summarize-data.pdf][03-summarizing-data.pdf]]            |
-|       4 | Basic Probability           | [[file:../slides/04-basic-probability.pdf][04-basic-probability.pdf]]           |
-|       5 | Discrete Random Variables   | [[file:../slides/05-discrete-random-variables.pdf][05-discrete-random-variables.pdf]]   |
-|       6 | Continuous Random Variables | [[file:../slides/06-continuous-random-variables.pdf][06-continuous-random-variables.pdf]] |
+| Lecture | Topic                               | Slides                                      |
+|---------+-------------------------------------+---------------------------------------------|
+|       1 | Introduction to Statistics          | [[file:../slides/01-intro-to-stats.pdf][01-intro-to-stats.pdf]]                       |
+|       2 | Describing Data Sets                | [[file:../slides/02-describing-data-sets.pdf][02-describing-data-sets.pdf]]                 |
+|       3 | Summarizing Data Sets               | [[file:../slides/03-summarize-data.pdf][03-summarizing-data.pdf]]                     |
+|       4 | Basic Probability                   | [[file:../slides/04-basic-probability.pdf][04-basic-probability.pdf]]                    |
+|       5 | Discrete Random Variables           | [[file:../slides/05-discrete-random-variables.pdf][05-discrete-random-variables.pdf]]            |
+|       6 | Continuous Random Variables         | [[file:../slides/06-continuous-random-variables.pdf][06-continuous-random-variables.pdf]]          |
+|       7 | Distribution of Sampling Statistics | [[file:../slides/07-distributions-of-sampling-statistics.pdf][07-distributions-of-sampling-statistics.pdf]] |
+|       8 | Estimation                          | [[file:../slides/08-estimation.pdf][08-estimation.pdf]]                           |
